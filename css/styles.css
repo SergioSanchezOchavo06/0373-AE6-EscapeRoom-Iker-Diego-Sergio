@@ -1,0 +1,384 @@
+/* ===========================
+   AULA 404 - Hoja de estilos
+   =========================== */
+/* Importacion de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap');
+/* Selector universal */
+* {
+    box-sizing: border-box;
+    margin: 0; /* Un margen 0*/
+    padding: 0; /* Un padding 0*/
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Que todo el cuerpo tenga font-family */
+    background-color: #0f0e17; /* Que tenga un color de fondo negro */
+    color: #e0e0f0;  /* El color de la fuente de color blanco*/
+    min-height: 100vh; 
+}
+
+/* ---- LAYOUT: filas y columnas ---- */
+
+.contenedor {
+    width: 90%; /* El ancho del contenedor que sea de 90%*/
+    max-width: 1000px; /* El maximo de ancho del contenedor 1000px*/
+    margin: 0 auto; /* El contenedor esta centrado */
+}
+
+.fila {
+    display: flex; /* El contenedor sera flexible */
+    flex-wrap: wrap; /* En el momento que los elementos no quepan, bajaran a la linea de abajo*/
+    gap: 20px; 
+}
+
+.columna-12 { width: 100%; }
+.columna-8  { flex: 1 1 60%; }
+.columna-4  { flex: 1 1 28%; }
+.columna-6  { flex: 1 1 45%; }
+
+/* Punto de corte: móvil (< 768px) */
+@media (max-width: 768px) {
+    .columna-8,
+    .columna-4,
+    .columna-6 {
+        flex: 1 1 100%;
+    }
+
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    .titulo-bienvenida h2 {
+        font-size: 1.8rem;
+    }
+
+    .reto-numero {
+        font-size: 3.5rem;
+    }
+
+    .congrats-wrap h2 {
+        font-size: 2rem;
+    }
+}
+
+/* ---- HEADER ---- */
+
+header {
+    background: linear-gradient(135deg, #1a1040 0%, #2d1b69 100%);
+    border-bottom: 3px solid #7c3aed;
+    padding: 18px 0;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+header p {
+    color: #a78bfa;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    font-family: 'Fira Code', monospace;
+}
+
+/* ---- MAIN ---- */
+
+main {
+    padding: 40px 0 60px;
+}
+
+/* ---- TARJETA ---- */
+
+.tarjeta {
+    background: linear-gradient(145deg, #1c1535, #221a45);
+    border: 1px solid #3730a3;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(55, 48, 163, 0.2);
+}
+
+.tarjeta h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #a78bfa;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+}
+
+.tarjeta p {
+    color: #c4b5fd;
+    line-height: 1.75;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* ---- BIENVENIDA ---- */
+
+.titulo-bienvenida {
+    text-align: center;
+    padding: 50px 0 36px;
+}
+
+.titulo-bienvenida h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.titulo-bienvenida h2 span {
+    color: #a78bfa;
+}
+
+.titulo-bienvenida p {
+    color: #7c6fa0;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+.reto-numero {
+    font-family: 'Fira Code', monospace;
+    font-size: 5rem;
+    color: #7c3aed;
+    opacity: 0.12;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.tarjeta-reto {
+    position: relative;
+    overflow: hidden;
+    border-color: #6d28d9;
+}
+
+/* ---- FORMULARIO ---- */
+
+.grupo-formulario {
+    margin-bottom: 20px;
+}
+
+.grupo-formulario label {
+    display: block;
+    color: #c4b5fd;
+    margin-bottom: 7px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.grupo-formulario input[type="text"],
+.grupo-formulario input[type="number"],
+.grupo-formulario input[type="email"] {
+    width: 100%;
+    padding: 11px 16px;
+    background-color: #13102a;
+    border: 1.5px solid #4338ca;
+    color: #e0e0f0;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.grupo-formulario input:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.15);
+}
+
+/* ---- BOTONES ---- */
+
+.boton {
+    display: inline-block;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.boton-primario {
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+}
+
+.boton-primario:hover {
+    background: linear-gradient(135deg, #6d28d9, #4338ca);
+    box-shadow: 0 6px 18px rgba(124, 58, 237, 0.5);
+    transform: translateY(-1px);
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: #a78bfa;
+    border: 2px solid #7c3aed;
+}
+
+.boton-secundario:hover {
+    background-color: #7c3aed;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+/* ---- MENSAJES ---- */
+
+.mensaje-error {
+    background-color: #2d1010;
+    border: 1px solid #ef4444;
+    border-left: 4px solid #ef4444;
+    color: #fca5a5;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.mensaje-error strong {
+    color: #f87171;
+}
+
+/* ---- BARRA DE PROGRESO ---- */
+
+.envoltorio-progreso {
+    margin-bottom: 32px;
+}
+
+.etiqueta-progreso {
+    color: #7c6fa0;
+    font-size: 0.78rem;
+    font-family: 'Fira Code', monospace;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.barra-progreso {
+    width: 100%;
+    height: 8px;
+    background-color: #1c1535;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #3730a3;
+}
+
+.relleno-progreso {
+    height: 100%;
+    background: linear-gradient(90deg, #7c3aed, #a78bfa);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+/* ---- CONGRATULATIONS ---- */
+
+.congrats-wrap {
+    text-align: center;
+    padding: 60px 0 40px;
+}
+
+.congrats-wrap h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+}
+
+.congrats-wrap h2 span {
+    color: #a78bfa;
+}
+
+.congrats-wrap p {
+    color: #c4b5fd;
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+    line-height: 1.7;
+}
+
+.badge-completado {
+    display: inline-block;
+    background: linear-gradient(135deg, #7c3aed22, #4f46e522);
+    border: 2px solid #7c3aed;
+    color: #a78bfa;
+    padding: 10px 26px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* ---- FOOTER ---- */
+
+footer {
+    border-top: 1px solid #1c1535;
+    text-align: center;
+    padding: 22px 0;
+    color: #3d3560;
+    font-size: 0.78rem;
+    font-family: 'Fira Code', monospace;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+/* ---- RESALTADO ---- */
+
+.resaltado {
+    color: #a78bfa;
+    font-weight: 600;
+}
+
+/* ---- LISTA DE PISTAS ---- */
+
+.lista-pistas {
+    margin-top: 10px;
+    list-style: none;
+}
+
+.lista-pistas li {
+    color: #9f8fc0;
+    font-size: 0.88rem;
+    margin-bottom: 6px;
+    padding-left: 4px;
+}
+
+.lista-pistas li::before {
+    content: "→ ";
+    color: #7c3aed;
+    font-weight: bold;
+}
+
+/* ---- INSIGNIA / DISTINTIVO ---- */
+
+.insignia {
+    display: inline-block;
+    background-color: #2d1b69;
+    color: #a78bfa;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 2px;
+}
+
+/* ---- ICONO ---- */
+.icono-ascii {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    display: block;
+}
