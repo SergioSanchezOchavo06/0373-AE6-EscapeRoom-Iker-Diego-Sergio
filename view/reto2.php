@@ -4,14 +4,14 @@ session_start();
 
 // Si no tiene reto1 en sesion es que no ha hecho login, lo echamos al inicio
 if (!isset($_SESSION['reto1'])) {
-    header('Location: ../index.php');
+    header('Location: /index.php');
     exit;
 }
 
 // Si no tiene reto2 es que no ha superado el reto 1 todavia
 // Le mostramos un alert de JS y lo mandamos de vuelta al reto 1
 if (!isset($_SESSION['reto2'])) {
-    echo '<script>alert("¡Eh, para el carro! Tienes que superar el Reto 1 antes de acceder aquí."); window.location.href = "reto1.php";</script>';
+    echo '<script>alert("¡Eh, para el carro! Tienes que superar el Reto 1 antes de acceder aquí."); window.location.href = "/view/reto1.php";</script>';
     exit; // paramos aqui, no cargamos el resto de la pagina
 }
 ?>
@@ -63,7 +63,7 @@ if (!isset($_SESSION['reto2'])) {
                     <?php endif; ?>
 
                     <!-- El formulario envia los datos por POST a proc.php -->
-                    <form action="../proc/proc.php" method="post">
+                    <form action="/proc/proc.php" method="post">
 
                         <!-- Campo oculto para que proc.php sepa que bloque ejecutar -->
                         <input type="hidden" name="pantalla" value="reto2">

@@ -4,7 +4,7 @@ session_start();
 
 // si el usuario no ha completado el reto1 lo mandamos al inicio
 if (!isset($_SESSION['reto1'])) {
-    header('Location: ../index.php'); // redirección al index
+    header('Location: /index.php'); // redirección al index
     exit; // corta la ejecución del script
 }
 
@@ -97,7 +97,7 @@ $nombre = $_SESSION['nombre'];
                     <p>Demostraste que algo se te quedó de clase: bases numéricas, redes, programación y hardware. El profe estaría orgulloso (o celoso, quién sabe).</p>
 
                     <!-- formulario para reiniciar el juego -->
-                    <form action="../proc/proc.php" method="post">
+                    <form action="/proc/proc.php" method="post">
 
                         <!-- valor oculto para decirle al script que queremos reiniciar -->
                         <input type="hidden" name="pantalla" value="replay">

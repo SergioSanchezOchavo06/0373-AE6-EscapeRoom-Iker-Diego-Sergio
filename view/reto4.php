@@ -4,7 +4,7 @@ session_start();
 
 // Si no tiene reto1 en sesion es que no ha hecho login, lo echamos al inicio
 if (!isset($_SESSION['reto1'])) {
-    header('Location: ../index.php');
+    header('Location: /index.php');
     exit;
 }
 
@@ -13,13 +13,13 @@ if (!isset($_SESSION['reto1'])) {
 if (!isset($_SESSION['reto4'])) {
     if (!isset($_SESSION['reto2'])) {
         // No ha superado ni el reto 1 todavia
-        echo '<script>alert("¡Eh, para el carro! Tienes que superar el Reto 1 antes de acceder aquí."); window.location.href = "reto1.php";</script>';
+        echo '<script>alert("¡Eh, para el carro! Tienes que superar el Reto 1 antes de acceder aquí."); window.location.href = "/view/reto1.php";</script>';
     } elseif (!isset($_SESSION['reto3'])) {
         // Tiene reto1 pero le falta el reto 2
-        echo '<script>alert("¡Eh, para el carro! Tienes que superar el Reto 2 antes de acceder aquí."); window.location.href = "reto2.php";</script>';
+        echo '<script>alert("¡Eh, para el carro! Tienes que superar el Reto 2 antes de acceder aquí."); window.location.href = "/view/reto2.php";</script>';
     } else {
         // Tiene reto1 y reto2 pero le falta el reto 3
-        echo '<script>alert("¡Eh, para el carro! Tienes que superar el Reto 3 antes de acceder aquí."); window.location.href = "reto3.php";</script>';
+        echo '<script>alert("¡Eh, para el carro! Tienes que superar el Reto 3 antes de acceder aquí."); window.location.href = "/view/reto3.php";</script>';
     }
     exit; // paramos aqui en todos los casos, no cargamos el resto de la pagina
 }
@@ -72,7 +72,7 @@ if (!isset($_SESSION['reto4'])) {
                     <?php endif; ?>
 
                     <!-- El formulario envia los datos por POST a proc.php -->
-                    <form action="../proc/proc.php" method="post">
+                    <form action="/proc/proc.php" method="post">
 
                         <!-- Campo oculto para que proc.php sepa que bloque ejecutar -->
                         <input type="hidden" name="pantalla" value="reto4">

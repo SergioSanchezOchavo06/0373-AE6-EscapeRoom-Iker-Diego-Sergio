@@ -4,7 +4,7 @@ session_start();
 
 // Si no tiene reto1 en sesion es que no ha hecho login todavia, lo mandamos al inicio
 if (!isset($_SESSION['reto1'])) {
-    header('Location: ../index.php');
+    header('Location: /index.php');
     exit; // paramos aqui, no seguimos ejecutando nada mas
 }
 ?>
@@ -56,7 +56,7 @@ if (!isset($_SESSION['reto1'])) {
                     <?php endif; ?>
 
                     <!-- El formulario envia los datos por POST a proc.php que comprueba si son correctos -->
-                    <form action="../proc/proc.php" method="post">
+                    <form action="/proc/proc.php" method="post">
 
                         <!-- Campo oculto que le dice a proc.php que bloque de codigo tiene que ejecutar -->
                         <input type="hidden" name="pantalla" value="reto1">

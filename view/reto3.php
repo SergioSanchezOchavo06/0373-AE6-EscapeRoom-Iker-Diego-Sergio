@@ -4,7 +4,7 @@ session_start();
 
 // Si no tiene reto1 en sesion es que no ha hecho login, lo echamos al inicio
 if (!isset($_SESSION['reto1'])) {
-    header('Location: ../index.php');
+    header('Location: /index.php');
     exit;
 }
 
@@ -13,10 +13,10 @@ if (!isset($_SESSION['reto1'])) {
 if (!isset($_SESSION['reto3'])) {
     if (!isset($_SESSION['reto2'])) {
         // No ha superado ni el reto 1 todavia (reto2 se desbloquea al pasar reto1)
-        echo '<script>alert("¡Eh, para el carro! Tienes que superar el Reto 1 antes de acceder aquí."); window.location.href = "reto1.php";</script>';
+        echo '<script>alert("¡Eh, para el carro! Tienes que superar el Reto 1 antes de acceder aquí."); window.location.href = "/view/reto1.php";</script>';
     } else {
         // Tiene reto1 superado pero le falta el reto 2
-        echo '<script>alert("¡Eh, para el carro! Tienes que superar el Reto 2 antes de acceder aquí."); window.location.href = "reto2.php";</script>';
+        echo '<script>alert("¡Eh, para el carro! Tienes que superar el Reto 2 antes de acceder aquí."); window.location.href = "/view/reto2.php";</script>';
     }
     exit; // paramos aqui en los dos casos, no cargamos el resto de la pagina
 }
@@ -69,7 +69,7 @@ if (!isset($_SESSION['reto3'])) {
                     <?php endif; ?>
 
                     <!-- El formulario envia los datos por POST a proc.php -->
-                    <form action="../proc/proc.php" method="post">
+                    <form action="/proc/proc.php" method="post">
 
                         <!-- Campo oculto para que proc.php sepa que bloque ejecutar -->
                         <input type="hidden" name="pantalla" value="reto3">

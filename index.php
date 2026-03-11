@@ -16,7 +16,7 @@ if (isset($_SESSION['reto1'])) {
 <body>
 
 <header>
-        <img src="IMG/logo800.webp" alt="Logo del aula 404">
+        <img src="IMG/Logo800.webp" alt="Logo del aula 404">
         <h1>ESCAPE ROOM</h1>
 </header>
 
@@ -48,7 +48,7 @@ if (isset($_SESSION['reto1'])) {
                     <h2>Identifícate para entrar</h2>
                     <p>El ordenador necesita saber quién eres. Pon tu nombre y correo y le damos:</p>
 
-                    <form action="proc/proc.php" method="post">
+                    <form action="/proc/proc.php" method="post">
                         <div class="grupo-formulario">
                             <label for="nombre">Tu nombre</label>
                             <input type="text" name="nombre" id="nombre" placeholder="Ej: Albeto De santos" required>
