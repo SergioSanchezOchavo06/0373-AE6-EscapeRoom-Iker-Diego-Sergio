@@ -11,22 +11,23 @@ if (isset($_SESSION['reto1'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Aula 404 - El Escape Room del Insti</title>
+    <title>Escape Room</title>
 </head>
 <body>
 
 <header>
-    <div class="contenedor">
-        <h1>💻 Aula 404</h1>
-        <p>// El escape room de la aula de ASIX //</p>
-    </div>
+        <img src="IMG/logo800.webp" alt="Logo del aula 404">
+        <h1>ESCAPE ROOM</h1>
 </header>
 
-<main>
+<main></main>
     <div class="contenedor">
 
         <div class="titulo-bienvenida">
-            <h2>Bienvenido al aula<br><span> de ASIX</span></h2>
+            <h2>Bienvenido al inicio<br><span> de la locura</span></h2>
+            <br>
+            <br>
+            <img src="IMG/foto.png" alt="Imagen">
         </div>
 
         <div class="fila">
@@ -69,7 +70,6 @@ if (isset($_SESSION['reto1'])) {
             </div>
 
         </div>
-
     </div>
 </main>
 
